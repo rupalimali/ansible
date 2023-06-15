@@ -1,0 +1,12 @@
+---
+- name: Playbook for creating users
+  hosts: all
+
+  tasks:
+  - name: Create users
+    user:
+     name: "{{ username }}"
+     home: /home/{{ username }}
+     shell: /bin/bash
+    tags:
+    - create_user
